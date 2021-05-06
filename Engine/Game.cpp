@@ -35,7 +35,7 @@ Game::Game( MainWindow& wnd )
 	std::uniform_real_distribution<float> vDist( -2.5f,2.5f );
 	for( int i = 0; i < nPoo; ++i )
 	{
-		poos[i].Init( xDist( rng ),yDist( rng ),vDist( rng ),vDist( rng ) );
+		poos[i].Init( xDist( rng ),yDist( rng ),vDist(rng),vDist(rng));
 	}
 	title.Play();
 }
@@ -28433,6 +28433,7 @@ void Game::ComposeFrame()
 	if( !isStarted )
 	{
 		DrawTitleScreen( 325,211 );
+		gfx.DrawCircle(200, 150, 30, Colors::Blue);
 	}
 	else
 	{
